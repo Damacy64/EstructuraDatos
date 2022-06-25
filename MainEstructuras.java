@@ -1,0 +1,47 @@
+/*
+ * Metodo principal, para probar las estructuras de datos creadas con
+ * anterioridad
+ */
+package estructurasdatos;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author pzx64
+ */
+public class MainEstructuras {
+    public static void main(String[] args) {
+        int opcion = 0,el;
+        Lista lista = new Lista();
+        do{
+            try{
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
+                        "1. Agregar un Elemento al inicio de la lista\n"
+                      + "2. Mostrar los Datos de la lista\n"
+                      + "3. Salir", "Menu de opciones",3));
+                switch(opcion){
+                    case 1:
+                        try {
+                            el = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el elemento:",
+                                    "Insertando al inicio",3));
+                            //agregando el elemento
+                            lista.agregarAlInicio(el);
+                        } catch (NumberFormatException n) {
+                            JOptionPane.showMessageDialog(null, "Error " + n.getMessage());
+                        }
+                        break;
+                    case 2:
+                        lista.mostrarLista();
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        break;
+                }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
+            }
+        }while(opcion!=3);
+    }
+}
