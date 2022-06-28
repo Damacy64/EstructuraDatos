@@ -13,6 +13,7 @@ public class Nodo {
     //Constructor para insertar el final
     public Nodo(int d){
         this.dato = d;
+        this.siguiente = null;
     }
     //Construcror para insertar el inicio
     public Nodo(int d, Nodo n){

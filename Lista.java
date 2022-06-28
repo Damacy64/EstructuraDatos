@@ -14,12 +14,29 @@ public class Lista {
         inicio = null;
         fin = null;
     }
+    //Metodo para saber si la lista esta vacia
+    public boolean estaVacia(){
+        if(inicio==null){
+            return true;
+        } else{
+            return false;
+        }
+    }
     //Metodo para agregar un nodo al inicio de la lista
     public void agregarAlInicio(int elemento){
         //Creando un nodo
         inicio = new Nodo(elemento, inicio);
         if(fin == null){
             fin = inicio;
+        }
+    }
+    //Metodo para insertar al final de la lista
+    public void agregarAlFinal(int elemento){
+        if(!estaVacia()){
+            fin.siguiente = new Nodo(elemento);
+            fin = fin.siguiente;
+        } else{
+            inicio = fin = new Nodo(elemento);
         }
     }
     //Metodo para mostrar los datos de la lista
